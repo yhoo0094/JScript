@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string.html</title>
+</head>
+<body>
+    <script>
+        var str1 = "Hello";
+        var str2 = new String("Hello");
+
+        // if(str1===str2){//===이면 값과 타입을 비교
+        //     console.log("같습니다.")
+        // } else {
+        //     console.log("다릅니다.")
+        // }
+        // if(str1==str2){ //==이면 값만 비교
+        //     console.log("같습니다.")
+        // } else {
+        //     console.log("다릅니다.")
+        // }
+
+        // str1 = "please locate where 'locate' occurs!";
+        // var pos = str1.indexOf('locates');
+        // console.log(pos);
+
+        // str1 = "최재영 민해주 김상민";
+        // str2 = "허성준";
+        // if(str1.indexOf(str2)>=0){
+        //     console.log("존재합니다")
+        // } else {
+        //     console.log("없습니다.")
+        // }
+
+        // str1 = "please locate where 'locate' occurs!";
+        // var pos = str1.lastIndexOf('locate');
+        // console.log(pos);
+
+        str1 = "최재영 민해주 김상민 민해주 김시무";
+        console.log("search: " + str1.search("민해주"));
+        console.log("slice: " + str1.slice(14))
+        console.log("substring: " + str1.substring(14, 17))
+        console.log("substr: " + str1.substr(14, 3))
+
+
+
+    </script>
+</body>
+</html>

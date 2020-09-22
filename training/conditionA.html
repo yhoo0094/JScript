@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>condition.html</title>
+    <style>
+        .table {
+            width: 500px; 
+            height: 500px; 
+            text-align: center;
+            border: solid 2px black;
+            border-collapse: collapse;
+        }
+        .sunday {
+            /* background: red;  */
+            color: red;
+        }
+        .monday {
+            /* background: orange;  */
+            color: orange;
+        }
+        .tusday {
+            /* background: yellow;  */
+            color: yellow;
+        }
+        .wendsday {
+            /* background: green;  */
+            color: green;
+        }
+        .thirthday {
+            /* background: blue;  */
+            color: blue;
+        }
+        .friday {
+            /* background: navy;  */
+            color: navy;
+        }
+        .saturday {
+            /* background: violet;  */
+            color: violet;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="showResult" style="border: 1px solid tomato;"></div>
+
+    <table style="text-align: center; ">
+        <tr>
+            <td style="background: red; color: white;"></td>
+        </tr>
+    </table>
+
+    <script>
+        var cols = ['일','월','화','수','목','금','토'];
+        // for(var i=0; i<cols.length; i++){
+        //     console.log(cols[i]);
+        // }
+        // for(col of cols) {  //향상된 for문 javascript버전
+        //     console.log(col)
+        // }
+        cols.forEach(function(a, b, c) { //a:값, b:인덱스 c:배열
+            console.log(a,b,c);
+        });
+
+        var i = 1;
+        var elem = document.getElementById("showResult");
+        var tag = "<table border='1' class='table'><tr>";
+        cols.forEach(function(a,b,c){
+            if(b == 0) {
+                tag+="<td class='sunday'>" + a + "</td>";
+            } else if(b==1){
+                tag+="<td class='monday'>" + a + "</td>";
+            } else if(b==2){
+                tag+="<td class='tusday'>" + a + "</td>";
+            } else if(b==3){
+                tag+="<td class='wendsday'>" + a + "</td>";
+            } else if(b==4){
+                tag+="<td class='thirthday'>" + a + "</td>";
+            } else if(b==5){
+                tag+="<td class='friday'>" + a + "</td>";
+            } else if(b==6){
+                tag+="<td class='saturday'>" + a + "</td>";
+            } else {
+                tag+="<td>" + a + "</td>";
+            }
+        })
+        tag += "</tr><tr>";
+        while(i<=30) {
+            if(i%7==1){
+                tag += "<td class='sunday'>"+ i +"</td>"
+                i++;
+                continue;
+            }
+            if(i%7==2){
+                tag += "<td class='monday'>"+ i +"</td>"
+                i++;
+                continue;
+            }
+            if(i%7==3){
+                tag += "<td class='tusday'>"+ i +"</td>"
+                i++;
+                continue;
+            }
+            if(i%7==4){
+                tag += "<td class='wendsday'>"+ i +"</td>"
+                i++;
+                continue;
+            }
+            if(i%7==5){
+                tag += "<td class='thirthday'>"+ i +"</td>"
+                i++;
+                continue;
+            }
+            if(i%7==6){
+                tag += "<td class='friday'>"+ i +"</td>"
+                i++;
+                continue;
+            }
+            if(i%7==0) {
+                tag += "<td class='saturday'>"+ i +"</td>"
+                tag += "</tr><tr>";
+                i++;
+                continue;
+            }
+            tag += "<td>" + i + "</td>";
+            
+            i++;
+        }
+        tag += "</tr></table>";
+        elem.innerHTML = tag;
+
+        // var bool1 = "a";
+        // var sum = 0;
+        // for(var i=0; i<5; i++) {
+        //     bool1 = !bool1;
+        //     if(bool1) {
+        //         sum +=i;
+        //     }
+        //     console.log(i, bool1, sum);
+        // }
+        // console.log("sum은 " +  sum);
+
+        // if(bool1){
+        //     console.log("참: " + bool1);
+        // } else {
+        //     console.log("거짓: " + bool1);
+        // }
+    </script>
+</body>
+</html>

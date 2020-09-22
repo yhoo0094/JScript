@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var today = new Date(); //오늘 날짜
+        console.log(today.getFullYear());//연
+        console.log(today.getMonth());//월
+        console.log(today.getDate());//일
+        var year = today.getFullYear();
+        var month = today.getMonth();
+        var todate = today.getDate;
+        today.setDate(1);
+        console.log("todate: " + today.getDate());
+        console.log("today: " + today.getDay());//이번 달 1일의 요일 정보
+        console.log(new Date(2020, 8, 0).getDate()); //8월의 마지막날
+    </script>
+</body>
+</html>

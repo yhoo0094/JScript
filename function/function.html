@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="function.js"></script>
+</head>
+<body>
+    <p id="showResult" style="background: yellow;"></p>
+
+    <div id="showDiv"></div>
+
+    <button id="btn" onclick="document.getElementById('showResult').innerHTML = minus(30, 20)">클릭</button>
+
+    <script>
+        var pTag = document.getElementById("showResult");
+        pTag.innerText = concat('Hello', 'World');
+
+        document.getElementById("showDiv").innerText = arySum();
+
+        console.log("mySum = " + mySum());
+
+        var yourSum = mySum;
+
+        console.log("youresum: " + yourSum);
+        console.log("youresum: " + yourSum());
+
+        var elem = document.getElementById("showDiv");
+        setBackgroundColor(elem);
+    </script>
+</body>
+</html>
