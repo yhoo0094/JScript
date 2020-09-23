@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="dom.js"></script>
+    
+    <style>
+        .lis {
+            background: orange;
+            
+        }
+    </style>
+</head>
+<body id="bdy" onload="loadPage()">
+    
+    <script>
+        //Hello 오렌지 사과
+        document.querySelectorAll("body");
+        let bdy = document.getElementsByTagName("body");
+        bdy[0].innerHTML = "<h1>Hello</h1>"
+
+        let $ul = document.createElement("ul");
+        let $li = document.createElement("li");
+
+        let $text = document.createTextNode("오렌지")
+        bdy[0].appendChild($ul);
+        $ul.appendChild($li);
+        $li.appendChild($text);
+
+        $li.setAttribute("class", "lis");//attribute 만들기
+
+        $text = document.createTextNode("사과")
+        $li = document.createElement("li");
+        $ul.appendChild($li);
+        $li.appendChild($text);
+
+        $li.setAttribute("style", "background: red; color: skyblue");
+
+        //br태그 넣기
+        let $br = document.createElement("br")
+        bdy[0].appendChild($br);
+        $br = document.createElement("br")
+        bdy[0].appendChild($br);
+        $br = document.createElement("br")
+        bdy[0].appendChild($br);
+        
+        //Hello World
+        let $div = document.createElement("div")
+        let $p = document.createElement("p")
+        let $h2 = document.createElement("h2")
+        
+        bdy[0].appendChild($div);
+
+        $text = document.createTextNode("Hello")
+        $div.appendChild($p);
+        $p.appendChild($text);
+
+        $p.setAttribute("style", "color: purple")
+
+        $text = document.createTextNode("World")
+        $div.appendChild($h2);
+        $h2.appendChild($text);
+
+        $h2.setAttribute("style", "color: green")
+
+    </script>
+</body>
+</html>

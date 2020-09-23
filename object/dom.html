@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ddd">
+        <a href="#">링크A</a>
+        <ul>
+            <li>오렌지</li>
+            <li>사과</li>
+            <li>
+                <ol>
+                    <li>부사</li>
+                    <li>아오리</li>
+                    <li>홍옥</li>
+                </ol>
+            </li>
+        </ul>
+        <h2>여기를 찾아보세요!</h2>
+    </div>
+    <script>
+        //document object의 구조에 따라 찾아가기
+        let ddd = document.getElementById("ddd");
+        // console.log(ddd.childNodes[3].childNodes[1].childNodes[0].nodeValue);
+        ddd.childNodes[3].childNodes[1].childNodes[0].nodeValue = "바나나";
+        ddd.childNodes[3].childNodes[1].style.background = "red";
+        
+        // .childNodes[1].childNodes[0].nodeValue
+
+        //여기를 찾아보세요!
+        console.log(ddd.childNodes[5].childNodes[0].nodeValue);
+        ddd.childNodes[5].style.background = "yellow";
+        
+        //아오리
+        console.log(ddd.childNodes[3].childNodes[5].childNodes[1].childNodes[3].childNodes[0].nodeValue);
+        // ddd.childNodes[3].childNodes[5].childNodes[1].childNodes[3].style.background = "green";
+
+        //글자 색깔 입히기
+        ddd.childNodes[3].childNodes[5].childNodes[1].childNodes[3].style.color = "green";
+        ddd.childNodes[3].childNodes[5].childNodes[1].childNodes[1].style.color = "hotpink";
+        ddd.childNodes[3].childNodes[5].childNodes[1].childNodes[5].style.color = "red";
+
+        console.log(window.document.URL);
+    </script>
+</body>
+</html>
