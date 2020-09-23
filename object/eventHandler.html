@@ -183,35 +183,25 @@
             //     }) 
             // })
 
-            // 선택한 행을 수정하기
+            // 선택한 행을 수정창에 출력하기
             let modifyAry = document.querySelectorAll("div input");
+            let Bis;
             tds.forEach((a, b, c) => {
                 tds[b].addEventListener("click", function () {
-                    
-                    // let AA = (2*b)+1;
-                    // modifyAry[b].value = this.childNodes[AA].childNodes[0].nodeValue;
-                    modifyAry[0].value = this.childNodes[1].childNodes[0].nodeValue;
-                    modifyAry[1].value = this.childNodes[3].childNodes[0].nodeValue;
-                    modifyAry[2].value = this.childNodes[5].childNodes[0].nodeValue;
-                    modifyAry[3].value = this.childNodes[7].childNodes[0].nodeValue;
-                    modifyAry[4].value = this.childNodes[9].childNodes[0].nodeValue;
-                    modifyAry[5].value = this.childNodes[11].childNodes[0].nodeValue;
+                    Bis = b;
+                    for(let i = 0; i <=5; i++){
+                        modifyAry[i].value = this.childNodes[1+2*i].childNodes[0].nodeValue;    
+                    }
                 })
             })
 
+            // 선택한 행을 수정하기
             let modifyBtn = document.getElementById("modify");
-            // modifyAry.forEach((a, b, c) => {
-            //     a.value = "1";
-            // })
             modifyBtn.onclick = function(){
-                tds.childNodes[1].childNodes[0].nodeValue = modifyAry[0].value
-                tds.childNodes[3].childNodes[0].nodeValue = modifyAry[1].value
-                tds.childNodes[5].childNodes[0].nodeValue = modifyAry[2].value
-                tds.childNodes[7].childNodes[0].nodeValue = modifyAry[3].value
-                tds.childNodes[9].childNodes[0].nodeValue = modifyAry[4].value
-                tds.childNodes[11].childNodes[0].nodeValue = modifyAry[5].value
+                for(let i = 0; i <=5; i++){
+                    tds[Bis].childNodes[1+2*i].childNodes[0].nodeValue = modifyAry[i].value;    
+                    }
             }
-            
 
             //선택한 행의 나이 가져오기
             tds.forEach((a, b, c) => {
