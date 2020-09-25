@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <script src="http://192.168.0.92/jScript/hobby/moon.js"></script> -->
     <style>
         button {
             margin: 30px 45%;
@@ -16,7 +17,7 @@
     </style>
 </head>
 
-<body>
+<body> 
     <label for="name">이름　</label>
     <input id="top" type="text" name="name" value="Hong">
     <label for="name">지위</label>
@@ -126,7 +127,6 @@
             console.log(types);
             let $tr = document.createElement("tr");
 
-
             for (let i = 0; i < types.length; i++) {
                 console.log(types[i].value);
                 let $td = document.createElement("td");
@@ -206,12 +206,7 @@
             //선택한 행의 나이 가져오기
             tds.forEach((a, b, c) => {
                 tds[b].addEventListener("click", function () {
-                    console.log(this.childNodes[1].childNodes[0].nodeValue)
-                    console.log(this.childNodes[3].childNodes[0].nodeValue)
-                    console.log(this.childNodes[5].childNodes[0].nodeValue)
                     console.log(this.childNodes[7].childNodes[0].nodeValue)
-                    console.log(this.childNodes[9].childNodes[0].nodeValue)
-                    console.log(this.childNodes[11].childNodes[0].nodeValue)
                 })
             })
 

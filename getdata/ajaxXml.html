@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl {
+            border-collapse: collapse;
+        }
+    </style>
+    <script>
+        function loadXml() {
+            let xhtp = new XMLHttpRequest();
+            xhtp.onreadystatechange = function () {
+                if (xhtp.readyState == 4 && xhtp.status == 200) { //readyState는 4번이 최종상태 status는 200이 완료의 의미
+                    // console.log(xhtp.responseXML);
+                    createPage(xhtp.responseXML);
+                }
+            }
+            xhtp.open('get', 'cd_catalog.xml')
+            xhtp.send();
+        }
+
+        function createPage(data) {
+            let tbl = document.getElementById("tbl");
+            tbl.setAttribute('border', 1);
+            let cds = data.getElementsByTagName('CD');
+            let newAry = [];
+            let tr, td, text;
+
+            newAry.push(cds[0]);
+            console.log(newAry.forEach(val, idx) => {
+                
+            });
+
+            
+
+            // console.log(cds2);
+
+            // cds.forEach(function(a,b,c){
+            //     console.log("야");
+            // })
+            
+            // cds.forEach(function(val, idx, ary) {
+            //     console.log(val);
+            // });
+
+            // //열이름 만들기
+            // tr = document.createElement("tr");
+            // td = document.createElement("td"); //column 생성
+            // td.append("제목");
+            // tr.append(td);
+            // tbl.append(tr);
+            // td = document.createElement("td"); //column 생성
+            // td.append("가수");
+            // tr.append(td);
+            // tbl.append(tr);
+            // td = document.createElement("td"); //column 생성
+            // td.append("대륙");
+            // tr.append(td);
+            // tbl.append(tr);
+            // td = document.createElement("td"); //column 생성
+            // td.append("국가");
+            // tr.append(td);
+            // tbl.append(tr);
+            // td = document.createElement("td"); //column 생성
+            // td.append("가격");
+            // tr.append(td);
+            // tbl.append(tr);
+            // td = document.createElement("td"); //column 생성
+            // td.append("연도");
+            // tr.append(td);
+            // tbl.append(tr);
+
+            // //표에 데이터 넣기
+            // for (let i = 0; i < cds.length; i++) {
+            //     //row생성
+            //     tr = document.createElement("tr");
+            //     for (let k = 0; k < 6; k++) {
+            //         td = document.createElement("td"); //column 생성
+            //         text = document.createTextNode(cds[i].children[k].innerHTML); //title
+            //         td.append(text);
+            //         tr.append(td);
+            //         tbl.append(tr);
+            //     }
+            // }
+
+        }
+    </script>
+</head>
+
+<body>
+    <h2>XML 요청</h2><br>
+    <button onclick="loadXml()">클릭</button>
+
+    <table id="tbl"></table>
+
+</body>
+
+</html>

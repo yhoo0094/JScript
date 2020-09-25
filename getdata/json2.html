@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let student = {
+            name: "Hong",
+            age: 10,
+            grade: null,
+            marriage: false,
+            birth: new Date(),
+            info: function () {
+                console.log("my name is hong");
+            }
+        }
+
+        // let json = JSON.stringify(student, ['name', 'age']);//일부만 넘기기
+        let json = JSON.stringify(student);//자바를 JSON타입으로 변환
+        // console.log(student);
+        // console.log(json);
+
+        let reStu = JSON.parse(json, function(k, v){//JSON타입을 자바로 변환
+            console.log(k, v);
+            return ((k=='birth')? new Date(v) : v);//String값을 Date타입으로 변환
+        });
+        console.log(reStu.birth.getDate());
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
